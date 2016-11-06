@@ -28,6 +28,18 @@ func myCGEventCallback(proxy: CGEventTapProxy, type: CGEventType, event: CGEvent
     return Unmanaged.passRetained(event)
 }
 
+func createTap() -> CFMachPort? {
+    let eventMask = (1 << CGEventType.keyDown.rawValue) | (1 << CGEventType.keyUp.rawValue)
+    return CGEvent.tapCreate(
+        tap: .cgSessionEventTap,
+        place: .headInsertEventTap,
+        options: .defaultTap,
+        eventsOfInterest: CGEventMask(eventMask),
+        callback: myCGEventCallback,
+        userInfo: nil
+    )
+}
+
 DispatchQueue.global(qos: .background).async {
     print("Starting background listener... 🔊➡️👂") // Some day it will receive events from the remote keyboard
     let charArray = Array("😱".utf16)
@@ -37,15 +49,9 @@ DispatchQueue.global(qos: .background).async {
     }
 }
 
-let eventMask = (1 << CGEventType.keyDown.rawValue) | (1 << CGEventType.keyUp.rawValue)
-guard let eventTap = CGEvent.tapCreate(tap: .cgSessionEventTap,
-                                       place: .headInsertEventTap,
-                                       options: .defaultTap,
-                                       eventsOfInterest: CGEventMask(eventMask),
-                                       callback: myCGEventCallback,
-                                       userInfo: nil) else {
-                                        print("Failed to create event tap, do you have root access? 🔑❓")
-                                        exit(1)
+guard let eventTap = createTap() else {
+    print("Failed to create event tap, do you have root access? 🔑❓")
+    exit(1)
 }
 
 let runLoopSource = CFMachPortCreateRunLoopSource(kCFAllocatorDefault, eventTap, 0)
