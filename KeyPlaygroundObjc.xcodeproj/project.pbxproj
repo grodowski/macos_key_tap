@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3DE950361DCF59EE0057C78D /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE950351DCF59EE0057C78D /* main.swift */; };
+		3D13E0B01E019C1B00FF2718 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D13E0AF1E019C1B00FF2718 /* main.swift */; };
+		3DE950361DCF59EE0057C78D /* keyboard_event_tap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE950351DCF59EE0057C78D /* keyboard_event_tap.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -23,8 +24,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		3D13E0AF1E019C1B00FF2718 /* main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		3DE950321DCF59EE0057C78D /* KeyPlaygroundObjc */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = KeyPlaygroundObjc; sourceTree = BUILT_PRODUCTS_DIR; };
-		3DE950351DCF59EE0057C78D /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		3DE950351DCF59EE0057C78D /* keyboard_event_tap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = keyboard_event_tap.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,7 +59,8 @@
 		3DE950341DCF59EE0057C78D /* KeyPlaygroundObjc */ = {
 			isa = PBXGroup;
 			children = (
-				3DE950351DCF59EE0057C78D /* main.swift */,
+				3DE950351DCF59EE0057C78D /* keyboard_event_tap.swift */,
+				3D13E0AF1E019C1B00FF2718 /* main.swift */,
 			);
 			path = KeyPlaygroundObjc;
 			sourceTree = "<group>";
@@ -121,7 +124,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3DE950361DCF59EE0057C78D /* main.swift in Sources */,
+				3D13E0B01E019C1B00FF2718 /* main.swift in Sources */,
+				3DE950361DCF59EE0057C78D /* keyboard_event_tap.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -260,6 +264,7 @@
 				3DE9503B1DCF59EE0057C78D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
