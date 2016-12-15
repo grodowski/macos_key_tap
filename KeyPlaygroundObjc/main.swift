@@ -7,5 +7,6 @@
 //
 
 import Foundation
+import CocoaMQTT
 
 let tap = KeyboardEventTap.init()
